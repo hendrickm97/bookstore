@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-fahlc^0im3pv3u!4wo$3c_!5!wh3w1ns3r=n(ua$66e!o2ebbr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "henks97.pythonanywhere.com"
+]
 
 
 # Application definition
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'bookstore.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "bookstore", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -147,9 +151,11 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = int(os.environ.get("DEBUG", default=0))
+#SECRET_KEY = os.environ.get("SECRET_KEY")
+
+#DEBUG = int(os.environ.get("DEBUG", default=0))
+
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+#ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
